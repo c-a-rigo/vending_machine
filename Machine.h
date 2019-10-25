@@ -1,19 +1,19 @@
 #ifndef MACHINE_H
 #define MACHINE_H
 using namespace std;
-#include "Pilha.cpp"
 
-class Machine
+#include "BancoDados.h"
+
+class Machine : public BancoDados
 {
 protected:
     string entrada;
     string saida;
     int estado;
     int event;
-    Pilha Pilhax;
 
 public:
     Machine();
-    void venda(int data, int hora);
+    int venda();
 };
 #endif

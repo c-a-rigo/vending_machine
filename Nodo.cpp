@@ -1,6 +1,6 @@
 #include "Nodo.h"
 
-Nodo::Nodo(string refri, int data, int hora, int preco, Nodo *nxt)
+Nodo::Nodo(string refri, int preco, Nodo *nxt)
 {
     this->refri = refri;
     this->data = data;

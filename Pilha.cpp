@@ -7,7 +7,7 @@ Pilha::Pilha()
 
 Pilha::~Pilha()
 {
-    /*  Node *cursor = topo;
+    /*Node *cursor = topo;
         while (topo)
         {
             cursor = cursor->getNext();
@@ -17,23 +17,25 @@ Pilha::~Pilha()
         topo = 0; // Officially empty */
 }
 
-void Pilha::push(string refri, int data, int hora, int preco)
+void Pilha::push(string refri, int preco)
 {
-    aux = new Nodo(refri, data, hora, preco, topo);
+    aux = new Nodo(refri, preco, topo);
     //aux->set_next(topo);
     topo = aux;
 }
 
-void Pilha::pop(string &ref, int &dat, int &hr, int &prec)
+void Pilha::pop(string &r, int &t, int &o, int &k)
 {
+
     aux = topo;
+
     if (aux)
     {
         topo = aux->get_next();
-        ref = aux->get_refri();
-        dat = aux->get_data();
-        hr = aux->get_hora();
-        prec = aux->get_preco();
+        r = aux->get_refri();
+        t = aux->get_data();
+        o = aux->get_hora();
+        k = aux->get_preco();
         delete (aux);
     }
 }

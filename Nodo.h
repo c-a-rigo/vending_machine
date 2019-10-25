@@ -12,7 +12,7 @@ class Nodo
     Nodo *next;
 
 public:
-    Nodo(string refri, int data, int hora, int preco, Nodo *nxt);
+    Nodo(string refri, int preco, Nodo *nxt);
     string get_refri();
     int get_data();
     int get_hora();

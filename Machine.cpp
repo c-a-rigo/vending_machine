@@ -1,9 +1,13 @@
 #include "Machine.h"
 #include "Interface.cpp"
-#include "InterfacePC.cpp"
-#include "InterfaceAtl.cpp"
 
-#define PC
+#ifdef PC
+#include "InterfacePC.cpp"
+#endif
+
+#ifdef ATL
+#include "InterfaceAtl.cpp"
+#endif
 
 Machine::Machine()
 {
@@ -13,7 +17,7 @@ Machine::Machine()
     event = 0;
 }
 
-void Machine::venda(int data, int hora)
+int Machine::venda()
 {
     int venda = 0;
     string aux;
@@ -33,11 +37,9 @@ void Machine::venda(int data, int hora)
 
     if (entrada == "report")
     {
-        while (!Pilhax.pilha_vazia())
-        {
-            Pilhax.pop(aux, data, hora, prec);
-            inter->report(aux, data, hora, prec);
-        }
+        //return 1;
+        repo = 1;
+        BancoDados::reporta();
     }
 
     switch (estado)
@@ -216,8 +218,9 @@ void Machine::venda(int data, int hora)
         inter->processa(saida);
 
     if (venda)
-        Pilhax.push(saida, data, hora, 150);
+        BancoDados::registra(saida, 150);
 
     event = 0;
     entrada = "nada";
+    return 0;
 }

@@ -12,8 +12,8 @@ private:
 public:
     Pilha();
     ~Pilha();
-    void push(string refri, int data, int hora, int preco);
-    void pop(string &ref, int &dat, int &hr, int &prec);
+    void push(string refri, int preco);
+    void pop(string &r, int &t, int &o, int &k);
     int pilha_vazia();
 };
 

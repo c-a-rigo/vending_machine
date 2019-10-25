@@ -8,3 +8,13 @@ int main()
 
     return 0;
 }
+
+#include "Interface.cpp"
+
+#ifdef PC
+#include "InterfacePC.cpp"
+#endif
+
+#ifdef ATL
+#include "InterfaceAtl.cpp"
+#endif

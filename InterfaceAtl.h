@@ -6,9 +6,9 @@ class InterfaceAtl : public Interface
 {
 protected:
     string entrada1;
-    volatile unsigned int *data;
-    volatile unsigned int *output;
-    volatile unsigned int *direction;
+    volatile unsigned int *data_atl;
+    volatile unsigned int *output_atl;
+    volatile unsigned int *direction_atl;
 
 public:
     InterfaceAtl();

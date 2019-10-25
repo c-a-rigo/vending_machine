@@ -3,6 +3,10 @@
 #include <iostream>
 using namespace std;
 
+#ifdef ATL
+#include "Oled.cpp"
+#endif
+
 class Interface
 {
 

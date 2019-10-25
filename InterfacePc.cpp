@@ -94,11 +94,11 @@ void InterfacePc::processa(string saida)
         cout << saida << endl;
 }
 
-void InterfacePc::report(string refri, int data, int hora, int preco)
+void InterfacePc::report(string x, int y, int z, int f)
 {
-    cout << refri << endl;
-    cout << data << endl;
-    cout << hora << endl;
-    cout << preco << endl;
+    cout << x << endl;
+    cout << y << endl;
+    cout << z << endl;
+    cout << f << endl;
     cout << "\n";
 }

@@ -2,29 +2,35 @@
 #include <string>
 #include <stdlib.h>
 
-#define ATL
+#define PC
 
-extern int repo = 0;
-extern int data = 12121999;
-extern int hora = 1900;
-
-#include "Machine.cpp"
-#include "BancoDados.cpp"
+#include "Machine/Machine.cpp"
+#include "Dados/BancoDados.cpp"
 
 int main()
 {
+    string sell;
+    int money;
+    int repo = 0;
+    int venda = 0;
 
     Machine Venda;
     BancoDados Dados;
 
     while (1)
     {
-        if (Venda.venda())
-        {
-            //cout << data;
-            Dados.reporta();
-        }
+        Venda.venda(sell, money, repo, venda);
 
-        cout << repo;
+        if (venda)
+        {
+            Dados.registra(sell, money);
+            venda = 0;
+        }
+        if (repo)
+        {
+            Dados.reporta(Venda);
+            //Dados.read_all_list(Venda);
+            repo = 0;
+        }
     }
 }

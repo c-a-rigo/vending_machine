@@ -2,7 +2,7 @@
 #include <string>
 #include <stdlib.h>
 
-#define PC
+#define ATL
 
 #include "Machine/Machine.cpp"
 #include "Dados/BancoDados.cpp"

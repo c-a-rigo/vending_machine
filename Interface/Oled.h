@@ -36,6 +36,6 @@ void clearLine(int line);
 /* Print one character */
 void printChar(char aux);
 /* Print a string */
-void printString(char *string);
+void printString(string texto);
 
 #endif

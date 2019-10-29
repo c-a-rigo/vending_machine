@@ -6,6 +6,7 @@ using namespace std;
 class Lista
 {
 private:
+    //ponteiros de gerenciamento da Lista.
     Nodo *top, *mid, *auxiliar;
 
 public:

@@ -1,6 +1,7 @@
 #include "Machine.h"
 #include "../common.h"
-Machine::Machine()
+
+Machine::Machine() //inicializa a maquina
 {
     entrada = "nada";
     saida = "d025";
@@ -18,17 +19,20 @@ Machine::Machine()
 
 int Machine::venda(string &r, int &p, int &repo, int &venda)
 {
-    //int venda = 0;
-    string aux;
-    int prec;
+    /*  Funçao para inserir valores em um novo nodo da lista. 
 
-    entrada = inter->get_entrada();
+    Argumentos:
+    r: O refrigerante vendido.
+    p: O preco do refrigerante.
+    repo: Caso a entrada seja report seta repo para '1'.
+    venda: Caso ocorra uma venda seta venda para '1'.
+    
+   */
+
+    entrada = inter->get_entrada(); //chama objeto interface para obter entrada
 
     if (entrada == "report")
-    {
         repo = 1;
-        //BancoDados::reporta();
-    }
 
     switch (estado)
     {
@@ -202,14 +206,14 @@ int Machine::venda(string &r, int &p, int &repo, int &venda)
         break;
     }
 
-    if (event == 1)
-        inter->processa(saida);
+    if (event == 1)             //se houver uma saida
+        inter->processa(saida); //chama interface e mostra a saida
 
-    if (venda)
+    if (venda) //se houver uma venda
     {
-        // BancoDados::registra(saida, 150);
-        r = saida;
-        p = 150;
+        //repassa dados da venda
+        r = saida; //refrigerante
+        p = 150;   //preco
     }
 
     event = 0;

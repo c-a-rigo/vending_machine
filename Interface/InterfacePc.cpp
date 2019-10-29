@@ -6,7 +6,6 @@
 
 string InterfacePc::get_entrada()
 {
-
     cin >> entrada1;
     return entrada1;
 }
@@ -15,6 +14,8 @@ void InterfacePc::processa(string saida)
 {
     if (saida == "meet")
     {
+        cout << "**MEET**" << endl;
+        /*
         cout << R"(                 `-+osyhdmmmmddhyso/.                  
                :yNNdys+//:::::/oyhhdmds.               
               oMy/``:/+o++oossdd++yy-omN:              
@@ -44,12 +45,12 @@ void InterfacePc::processa(string saida)
                :shyysssssssssmdsssyyhyo.               
                   -/ossssssssssssso/.                  
 )"
-             << '\n';
+             << '\n'; */
     }
 
     else if (saida == "etirps")
     {
-        cout << R"(                                                       
+        /*  cout << R"(                                                       
                                                        
                                                        
                    `.-:::::--::::--``                  
@@ -87,7 +88,8 @@ void InterfacePc::processa(string saida)
                                                        
                                                        
 )"
-             << '\n';
+             << '\n'; */
+        cout << "**ETIRPS**" << endl;
     }
 
     else
@@ -96,6 +98,15 @@ void InterfacePc::processa(string saida)
 
 void InterfacePc::report(string x, int y, int z, int f)
 {
+    /*  Funçao para mostrar os valores de uma venda. 
+
+    Argumentos:
+    x: O refrigerante vendido.
+    y: A data da venda.
+    z: A hora da venda.
+    f: O preco do refrigerante.
+    
+   */
 
     cout << x << endl;
     cout << y << endl;
@@ -104,10 +115,19 @@ void InterfacePc::report(string x, int y, int z, int f)
     cout << "\n";
 }
 
-void InterfacePc::report_final(string x, int y, string f)
+void InterfacePc::report_final(string x, int y, string f, int z)
 {
+    /*  Funçao para mostrar o report de vendas. 
+
+    Argumentos:
+    x: O refrigerante mais vendido.
+    y: A quantidade de unidades vendidas.
+    f: Periodo com mais vendas.
+    z: Valor total de vendas.
+
+   */
 
     cout << "O refrigerante mais vendido foi o " << x << ", com " << y << " unidades vendidas." << endl;
     cout << "O periodo do dia com mais vendas foi: " << f << "." << endl;
-    cout << "Valor total de vendas: " << y * 1.5 << " reais." << endl;
+    cout << "Valor total de vendas: " << z << " reais." << endl;
 }

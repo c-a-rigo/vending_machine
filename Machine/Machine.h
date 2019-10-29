@@ -17,6 +17,7 @@ using namespace std;
 class Machine : public BancoDados
 {
 protected:
+    //variaveis de controle da maquina de estados e objeto inteface
     string entrada;
     string saida;
     int estado;

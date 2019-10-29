@@ -2,6 +2,17 @@
 
 Nodo::Nodo(string &r, int &t, int &o, int &k, Nodo *nxt)
 {
+    /*  Construtor de um nodo. 
+
+    Argumentos:
+    r: O refrigerante vendido.
+    t: A data da venda.
+    o: A hora da venda.
+    k: O preco do refrigerante.
+    nxt: Ponteiro do nodo anterior.
+    
+   */
+
     this->refri = r;
     this->data = t;
     this->hora = o;

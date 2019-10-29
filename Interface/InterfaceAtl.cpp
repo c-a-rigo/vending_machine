@@ -5,6 +5,7 @@
 #include <iomanip>
 #include "Oled.cpp"
 #include "InterfaceAtl.h"
+using namespace std;
 
 InterfaceAtl::InterfaceAtl()
 {
@@ -52,9 +53,23 @@ string InterfaceAtl::get_entrada()
 
 void InterfaceAtl::processa(string saida)
 {
+    /*
+    
+    Funçao para mostrar uma saida da maquina. 
+
+          Display 16x4
+        1234567890123456  
+
+    1   +Vendido: etirps
+    2   Quantidade: 12
+    3   Periodo: manha
+    4   Valor total: 18  
+
+    */
+
     cout << saida;
     oledClear();
-    setLine(0);
+    setLine(2);
     printString(saida);
     delay(1000000);
     oledClear();
@@ -62,6 +77,48 @@ void InterfaceAtl::processa(string saida)
 
 void InterfaceAtl::report(string refri, int data, int hora, int preco)
 {
+}
 
-    printString(refri);
+void InterfaceAtl::report_final(string x, int y, string f, int z)
+{
+    /*
+    
+    Funçao para mostrar o report final de vendas. 
+
+    Argumentos:
+    x: O refrigerante mais vendido.
+    y: A quantidade de unidades vendidas.
+    f: Periodo com mais vendas.
+    z: Valor total de vendas.
+
+          Display 16x4
+        1234567890123456  
+
+    1   +Vendido: etirps
+    2   Quantidade: 12
+    3   Periodo: manha
+    4   Valor total: 18  
+
+    */
+    string aux;
+
+    oledClear();
+
+    setLine(0);
+    printString("+Vendido: ");
+    printString(x);
+
+    setLine(1);
+    printString("Quantidade: ");
+    aux = to_string(y);
+    printString(aux);
+
+    setLine(2);
+    printString("Periodo: ");
+    printString(f);
+
+    setLine(3);
+    printString("Valor total: ");
+    aux = to_string(z);
+    printString(aux);
 }

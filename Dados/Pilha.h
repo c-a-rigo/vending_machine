@@ -6,6 +6,7 @@ using namespace std;
 class Pilha
 {
 private:
+    //ponteiros de gerenciamento da Pilha.
     Nodo *topo, *aux;
 
 public:

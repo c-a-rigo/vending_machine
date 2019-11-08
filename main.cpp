@@ -6,6 +6,7 @@
 
 #include "Machine/Machine.cpp"
 #include "Dados/BancoDados.cpp"
+#include "Escalonador/ListaEsc.cpp"
 
 int main()
 {
@@ -17,7 +18,12 @@ int main()
     Machine Venda;
     BancoDados Dados;
 
-    while (1)
+    ListaEsc Listax;
+
+    Listax.push(1, 2, 3, 4, 5, &Venda.teste2);
+    Listax.teste();
+
+    /* while (1)
     {
         Venda.venda(sell, money, repo, venda);
 
@@ -32,5 +38,5 @@ int main()
             //Dados.read_all_list(Venda);
             repo = 0;
         }
-    }
+    } */
 }

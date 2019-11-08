@@ -220,3 +220,8 @@ int Machine::venda(string &r, int &p, int &repo, int &venda)
     entrada = "nada";
     return 0;
 }
+
+void Machine::teste2()
+{
+    cout << "funcionou" << endl;
+}

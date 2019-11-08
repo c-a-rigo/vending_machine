@@ -2,7 +2,7 @@
 #define LISTAESC_H
 #include <iostream>
 using namespace std;
-#include "NodoEsc.h"
+#include "NodoEsc.cpp"
 
 class ListaEsc
 {
@@ -12,11 +12,12 @@ private:
 public:
     ListaEsc();
     ~ListaEsc();
-    void push(string &r, int &t, int &o, int &k);
-    void pop(string &r, int &t, int &o, int &k);
+    void push(int p, int a, int r, int h, int b, void (*task)(void));
+    void pop(int &p, int &a, int &r, int &h, int &b, void (*task)(void));
     NodoEsc *get_mid();
     NodoEsc *get_mid_next();
     void set_mid(NodoEsc *nxt);
-    void ler(string &r, int &t, int &o, int &k, NodoEsc *nxt);
+    void ler(int &p, int &a, int &r, int &h, int &b, void (*task)(void), NodoEsc *nxt);
+    void teste();
 };
 #endif

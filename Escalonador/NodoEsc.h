@@ -3,25 +3,34 @@
 #include <iostream>
 using namespace std;
 
+typedef void (*VoidFn)();
+
 class NodoEsc
 {
-    string refri;
-    int data;
-    int hora;
-    int preco;
+    int periodo;
+    int atraso;
+    int pronta;
+    int habilita;
+    int bloqueada;
+    void (*task)(void);
     NodoEsc *next;
 
 public:
-    NodoEsc(string &r, int &t, int &o, int &k, NodoEsc *nxt);
-    string get_refri();
-    int get_data();
-    int get_hora();
-    int get_preco();
+    NodoEsc(int p, int a, int r, int h, int b, void (*task)(void), NodoEsc *nxt);
+    int get_periodo();
+    int get_atraso();
+    int get_pronta();
+    int get_habilita();
+    int get_bloqueada();
+    VoidFn get_void();
     NodoEsc *get_next();
-    void set_refri(string refri);
-    void set_data(int data);
-    void set_hora(int hora);
-    void set_preco(int preco);
+
+    void set_periodo(int p);
+    void set_atraso(int a);
+    void set_pronta(int r);
+    void set_habilita(int h);
+    void set_bloqueada(int b);
+    void set_funcao(void (*task)(void));
     void set_next(NodoEsc *nxt);
 };
 

@@ -1,32 +1,44 @@
 #include "NodoEsc.h"
 
-NodoEsc::NodoEsc(string &r, int &t, int &o, int &k, NodoEsc *nxt)
+NodoEsc::NodoEsc(int p, int a, int r, int h, int b, void (*task)(void), NodoEsc *nxt)
 {
-    this->refri = r;
-    this->data = t;
-    this->hora = o;
-    this->preco = k;
+    periodo = p;
+    atraso = a;
+    pronta = r;
+    habilita = h;
+    bloqueada = b;
+    this->task = task;
     next = nxt;
 }
 
-string NodoEsc::get_refri()
+VoidFn NodoEsc::get_void()
 {
-    return refri;
+    return task;
 }
 
-int NodoEsc::get_data()
+int NodoEsc::get_periodo()
 {
-    return data;
+    return periodo;
 }
 
-int NodoEsc::get_hora()
+int NodoEsc::get_atraso()
 {
-    return hora;
+    return atraso;
 }
 
-int NodoEsc::get_preco()
+int NodoEsc::get_pronta()
 {
-    return preco;
+    return pronta;
+}
+
+int NodoEsc::get_habilita()
+{
+    return habilita;
+}
+
+int NodoEsc::get_bloqueada()
+{
+    return bloqueada;
 }
 
 NodoEsc *NodoEsc::get_next()
@@ -34,24 +46,34 @@ NodoEsc *NodoEsc::get_next()
     return next;
 }
 
-void NodoEsc::set_refri(string refri)
+void NodoEsc::set_periodo(int p)
 {
-    this->refri = refri;
+    periodo = p;
 }
 
-void NodoEsc::set_data(int data)
+void NodoEsc::set_atraso(int a)
 {
-    this->data = data;
+    atraso = a;
 }
 
-void NodoEsc::set_hora(int hora)
+void NodoEsc::set_pronta(int r)
 {
-    this->hora = hora;
+    pronta = r;
 }
 
-void NodoEsc::set_preco(int preco)
+void NodoEsc::set_habilita(int h)
 {
-    this->preco = preco;
+    habilita = h;
+}
+
+void NodoEsc::set_bloqueada(int b)
+{
+    bloqueada = b;
+}
+
+void NodoEsc::set_funcao(void (*task)(void))
+{
+    this->task = task;
 }
 
 void NodoEsc::set_next(NodoEsc *nxt)

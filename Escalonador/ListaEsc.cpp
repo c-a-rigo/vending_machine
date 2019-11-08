@@ -18,9 +18,9 @@ ListaEsc::~ListaEsc()
     mid = 0;
 }
 
-void ListaEsc::push(string &r, int &t, int &o, int &k)
+void ListaEsc::push(int p, int a, int r, int h, int b, void (*task)(void))
 {
-    auxiliar = new NodoEsc(r, t, o, k, top);
+    auxiliar = new NodoEsc(p, a, r, h, b, task, top);
     //aux->set_next(topo);
     top = auxiliar;
     mid = top;
@@ -41,14 +41,31 @@ void ListaEsc::set_mid(NodoEsc *nxt)
     mid = nxt;
 }
 
-void ListaEsc::ler(string &r, int &t, int &o, int &k, NodoEsc *n)
+void ListaEsc::ler(int &p, int &a, int &r, int &h, int &b, void (*task)(void), NodoEsc *nxt)
 {
-    if (n)
+    if (nxt)
     {
-        r = n->get_refri();
-        t = n->get_data();
-        o = n->get_hora();
-        k = n->get_preco();
-        n = n->get_next();
+        cout << nxt->get_periodo() << endl;
+        cout << nxt->get_atraso() << endl;
+        cout << nxt->get_pronta() << endl;
+        cout << nxt->get_habilita() << endl;
+        cout << nxt->get_bloqueada() << endl;
+        cout << nxt->get_void() << endl;
+        cout << nxt->get_next() << endl;
     }
+}
+
+void ListaEsc::teste()
+{
+
+    cout << top->get_periodo() << endl;
+    cout << top->get_atraso() << endl;
+    cout << top->get_pronta() << endl;
+    cout << top->get_habilita() << endl;
+    cout << top->get_bloqueada() << endl;
+    cout << top->get_next() << endl;
+
+    void (*ttt)(void);
+    ttt = top->get_void();
+    ttt();
 }

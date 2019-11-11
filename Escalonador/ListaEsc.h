@@ -8,6 +8,7 @@ class ListaEsc
 {
 private:
     NodoEsc *top, *mid, *auxiliar;
+    int n;
 
 public:
     ListaEsc();
@@ -18,6 +19,7 @@ public:
     NodoEsc *get_mid_next();
     void set_mid(NodoEsc *nxt);
     void ler(int &p, int &a, int &r, int &h, int &b, void (*task)(void), NodoEsc *nxt);
-    void teste();
+    void decide(unsigned long int tempo);
+    void bloqueia(void (*task)(void));
 };
 #endif

@@ -22,6 +22,8 @@ InterfaceAtl::InterfaceAtl()
 string InterfaceAtl::get_entrada()
 {
 
+    *direction_atl = 0xffffffff;
+
     while (*data_atl == 0)
         ;
 
@@ -110,7 +112,11 @@ void InterfaceAtl::report_final(string x, int y, string f, int z)
 
     setLine(1);
     printString("Quantidade: ");
-    aux = to_string(y);
+
+    /*  stringstream ss;
+    ss << y;
+    aux = ss.str(); */
+
     printString(aux);
 
     setLine(2);
@@ -119,6 +125,10 @@ void InterfaceAtl::report_final(string x, int y, string f, int z)
 
     setLine(3);
     printString("Valor total: ");
-    aux = to_string(z);
+    /* 
+    stringstream ss;
+    ss << z;
+    aux = ss.str(); */
+
     printString(aux);
 }

@@ -117,7 +117,7 @@ void ListaEsc::decide(unsigned long int tempo)
 
             while (mid != 0) //enquanto meio não chega no fim da lista
             {
-                if (mid->get_pronta() > 0) // entra as prontas
+                if (mid->get_pronta() > 0 && !exec) // entra as prontas
                 {
                     if (mid->get_prioridade() == n && !mid->get_bloqueada()) // acha a que tem prioridade igual a prioridade mais alta entre as prontas
                     {
@@ -143,7 +143,7 @@ void ListaEsc::decide(unsigned long int tempo)
 
                 while (mid != 0) //enquanto meio não chega no fim da lista
                 {
-                    if (mid->get_pronta() > 0 && !mid->get_bloqueada()) // entra as prontas
+                    if (mid->get_pronta() > 0 && !exec) // entra as prontas
                     {
 
                         ptr = mid->get_pronta(); //pega o valor de pronta
@@ -172,7 +172,7 @@ void ListaEsc::bloqueia(void (*task)(void))
     {
         if (mid->get_void() == task) // encontra a tarefa a bloquear
         {
-            mid->set_bloqueada(1);
+            mid->set_bloqueada(1); //bloqueia
         }
         mid = mid->get_next(); // meio aponta para o proximo nodo
     }

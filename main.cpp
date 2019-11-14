@@ -2,11 +2,11 @@
 #include <string>
 #include <stdlib.h>
 
-#define ATL
+#define PC
 
 #include "Machine/Machine.cpp"
 #include "Dados/BancoDados.cpp"
-#include "Escalonador/ListaEsc.cpp"
+#include "Escalonador/Escalonador.cpp"
 
 int main()
 {
@@ -18,12 +18,12 @@ int main()
     Machine Venda;
     BancoDados Dados;
 
-    ListaEsc Listax;
+    Escalonador Escalonador;
 
-    Listax.push(1, 2, 3, 4, 5, &Venda.teste2);
-    Listax.teste();
+    Escalonador.escalona(1, 2, 0, 1, 0, &Machine::teste2); //periodo, prioridade, pronta, habilitada, bloqueada, funçao
+    Escalonador.executa();
 
-    /* while (1)
+    while (1)
     {
         Venda.venda(sell, money, repo, venda);
 
@@ -38,5 +38,5 @@ int main()
             //Dados.read_all_list(Venda);
             repo = 0;
         }
-    } */
+    }
 }

@@ -7,6 +7,8 @@
 string InterfacePc::get_entrada()
 {
     cin >> entrada1;
+    // cout << entrada1 << endl;
+
     return entrada1;
 }
 

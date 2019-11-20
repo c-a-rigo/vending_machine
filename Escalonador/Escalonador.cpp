@@ -16,8 +16,8 @@ void Escalonador::executa()
 {
     tempo++;
 
-    cout << endl
-         << "t" << tempo << " ";
+    /*  cout << endl
+         << "t" << tempo << " "; */
 
     Lista.decide(tempo);
 }

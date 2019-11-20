@@ -28,6 +28,6 @@ public:
     Machine();
     int venda(string &r, int &p, int &repo, int &venda);
     friend class BancoDados;
-    static void teste2();
+    void teste2();
 };
 #endif

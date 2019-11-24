@@ -15,6 +15,8 @@ Machine::Machine() //inicializa a maquina
 #ifdef ATL
     inter = new InterfaceAtl;
 #endif
+
+    inter->abertura();
 }
 
 int Machine::venda(string &r, int &p, int &repo, int &venda)
@@ -28,11 +30,14 @@ int Machine::venda(string &r, int &p, int &repo, int &venda)
     venda: Caso ocorra uma venda seta venda para '1'.
     
    */
-
+    cout << "Sua entrada: ";
     entrada = inter->get_entrada(); //chama objeto interface para obter entrada
 
-    if (entrada == "report")
+    if (entrada == "reporta")
         repo = 1;
+
+    if (entrada == "reportatudo")
+        repo1 = 1;
 
     switch (estado)
     {

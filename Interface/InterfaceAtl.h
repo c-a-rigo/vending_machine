@@ -15,6 +15,7 @@ public:
     string get_entrada();
     void processa(string);
     void report(string refri, int data, int hora, int preco);
-    void report_final(string x, int y, string f, int z);
+    void report_final(string x, int c, string f, int z);
+    void abertura();
 };
 #endif

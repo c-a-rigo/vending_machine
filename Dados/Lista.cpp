@@ -39,6 +39,7 @@ void Lista::push(string &r, int &t, int &o, int &k)
 
 Nodo *Lista::get_mid()
 {
+
     return mid; //retorna valor do ponteiro mid.
 }
 

@@ -16,7 +16,8 @@ void InterfacePc::processa(string saida)
 {
     if (saida == "meet")
     {
-        cout << "**MEET**" << endl;
+
+        cout << "******************************* TEEM ***********************************" << endl;
         /*
         cout << R"(                 `-+osyhdmmmmddhyso/.                  
                :yNNdys+//:::::/oyhhdmds.               
@@ -91,29 +92,66 @@ void InterfacePc::processa(string saida)
                                                        
 )"
              << '\n'; */
-        cout << "**ETIRPS**" << endl;
+        cout << "****************************** SPRITE **********************************" << endl;
     }
 
     else
-        cout << saida << endl;
+        cout << "Devolução: " << saida << endl;
 }
 
-void InterfacePc::report(string x, int y, int z, int f)
+void InterfacePc::report(string x, int c, int z, int f)
 {
     /*  Funçao para mostrar os valores de uma venda. 
 
     Argumentos:
     x: O refrigerante vendido.
-    y: A data da venda.
+    c: A data da venda.
     z: A hora da venda.
     f: O preco do refrigerante.
     
    */
 
-    cout << x << endl;
-    cout << y << endl;
-    cout << z << endl;
-    cout << f << endl;
+    int m, d, y;
+    int hr, mi;
+
+    string proc_hora = "", proc_data = "";
+
+    //decifra a data
+    y = c % 10000;
+    c = c / 10000;
+    m = c % 100;
+    c = c / 100;
+    d = c % 100;
+
+    //decifra a hora
+    mi = z % 100;
+    z = z / 100;
+    hr = z % 100;
+
+    std::string s_mes = std::to_string(m);
+    std::string s_dia = std::to_string(d);
+    std::string s_ano = std::to_string(y);
+    std::string s_hora = std::to_string(hr);
+    std::string s_min = std::to_string(mi);
+
+    proc_data = s_dia + "/" + s_mes + "/" + s_ano;
+
+    if (d < 10)
+        proc_data = "0" + s_dia + "/" + s_mes + "/" + s_ano;
+    if (m < 10)
+        proc_data = s_dia + "/" + "0" + s_mes + "/" + s_ano;
+    if (d < 10 && m < 10)
+        proc_data = "0" + s_dia + "/" + "0" + s_mes + "/" + s_ano;
+
+    proc_hora = s_hora + ":" + s_min;
+    if (mi < 10)
+        proc_hora = s_hora + ":" + "0" + s_min;
+
+    cout << "\n";
+    if (x == "etirps")
+        cout << "Um refrigerante Sprite foi vendido dia " << proc_data << " as " << proc_hora << "h por R$: 1.50" << endl;
+    if (x == "meet")
+        cout << "Um refrigerante Teem foi vendido dia " << proc_data << " as " << proc_hora << "h por R$: 1.50" << endl;
     cout << "\n";
 }
 
@@ -128,8 +166,32 @@ void InterfacePc::report_final(string x, int y, string f, int z)
     z: Valor total de vendas.
 
    */
-
+    cout << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "                        RELATORIO DE VENDAS                             " << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << endl;
     cout << "O refrigerante mais vendido foi o " << x << ", com " << y << " unidades vendidas." << endl;
     cout << "O periodo do dia com mais vendas foi: " << f << "." << endl;
     cout << "Valor total de vendas: " << z << " reais." << endl;
+    cout << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << endl;
+}
+
+void InterfacePc::abertura()
+{
+    cout << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "            MAQUINA DE VENDA DE REFRIGERANTES ESCALONADA                " << endl;
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Digite =>  'm100' para inserir R$ 1,00. " << endl;
+    cout << "Digite =>  'm050' para inserir R$ 0,50. " << endl;
+    cout << "Digite =>  'm025' para inserir R$ 0,25. " << endl;
+    cout << "Digite =>  'dev' devolucao do seu dinheiro." << endl;
+    cout << "Digite =>  'meet' para o refrigerante Teem (R$ 1,50)." << endl;
+    cout << "Digite =>  'etirps' para o refrigerante Sprite (R$ 1,50)." << endl;
+    cout << "Digite =>  'reporta' para o relatorio geral de vendas." << endl;
+    cout << "Digite =>  'reportatudo' para lista de todas vendas já feitas." << endl;
+    cout << endl;
 }

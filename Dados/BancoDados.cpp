@@ -32,6 +32,7 @@ void BancoDados::reporta(Machine M)
     {
         //retira dados da Pilha e salva na Lista.
         Pilhax.pop(a, b, c, d);
+
         Listax.push(a, b, c, d);
 
         //analisa qual refrigerante foi vendido e incrementa seu contador
@@ -41,7 +42,7 @@ void BancoDados::reporta(Machine M)
             n_etirps++;
 
         //verifica em qual periodo ocorreu a venda e incrementa seu contador
-        if ((c >= 0) && (c < 1200))
+        if ((c > 0) && (c < 1200))
             manha++;
 
         else if ((c >= 1200) && (c < 1900))
@@ -57,18 +58,18 @@ void BancoDados::reporta(Machine M)
     }
 
     //analisa os contadores de periodo de vendas e define o maior
-    if ((manha >= tarde) && (tarde >= noite))
+    if ((manha >= tarde) && (manha >= noite))
         periodo = "manha";
-    else if ((tarde >= noite) && (noite >= manha))
+    else if ((tarde >= noite) && (tarde >= manha))
         periodo = "tarde";
-    else if ((noite >= manha) && (manha >= tarde))
+    else if ((noite >= manha) && (noite >= tarde))
         periodo = "noite";
 
     //analisa os contadores de refrigerante mais vendido e chama a interface para reportar
     if (n_etirps > n_meet)
-        M.inter->report_final("etirps", n_etirps, periodo, valor_total / 100);
+        M.inter->report_final("etirps", n_etirps, periodo, valor_total);
     else
-        M.inter->report_final("meet", n_meet, periodo, valor_total / 100);
+        M.inter->report_final("meet", n_meet, periodo, valor_total);
 }
 
 void BancoDados::read_all_list(Machine M)
@@ -81,7 +82,8 @@ void BancoDados::read_all_list(Machine M)
     int d;    //O preco do refrigerante.
     Nodo *n;  //ponteiro para nodo na Lista
 
-    n = Listax.get_mid(); //ponteiro recebe endereco de mid (ponteiro auxiliar para varrer a lista)
+    n = Listax.get_topo(); //ponteiro recebe endereco do topo
+    Listax.set_mid(n);     // coloca enderço do topo no ponteiro auxiliar para varrer a lista
 
     while (n != 0)
     {

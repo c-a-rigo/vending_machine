@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <iomanip>
 
 #include "InterfacePc.h"
 
@@ -166,6 +167,10 @@ void InterfacePc::report_final(string x, int y, string f, int z)
     z: Valor total de vendas.
 
    */
+
+    float valor;
+    valor = ((float)z) / 100;
+
     cout << endl;
     cout << "------------------------------------------------------------------------" << endl;
     cout << "                        RELATORIO DE VENDAS                             " << endl;
@@ -173,7 +178,8 @@ void InterfacePc::report_final(string x, int y, string f, int z)
     cout << endl;
     cout << "O refrigerante mais vendido foi o " << x << ", com " << y << " unidades vendidas." << endl;
     cout << "O periodo do dia com mais vendas foi: " << f << "." << endl;
-    cout << "Valor total de vendas: " << z << " reais." << endl;
+    cout << "Valor total de vendas: R$ ";
+    cout << fixed << setprecision(2) << valor << " reais." << endl;
     cout << endl;
     cout << "------------------------------------------------------------------------" << endl;
     cout << endl;
@@ -185,12 +191,12 @@ void InterfacePc::abertura()
     cout << "------------------------------------------------------------------------" << endl;
     cout << "            MAQUINA DE VENDA DE REFRIGERANTES ESCALONADA                " << endl;
     cout << "------------------------------------------------------------------------" << endl;
-    cout << "Digite =>  'm100' para inserir R$ 1,00. " << endl;
-    cout << "Digite =>  'm050' para inserir R$ 0,50. " << endl;
-    cout << "Digite =>  'm025' para inserir R$ 0,25. " << endl;
-    cout << "Digite =>  'dev' devolucao do seu dinheiro." << endl;
-    cout << "Digite =>  'meet' para o refrigerante Teem (R$ 1,50)." << endl;
-    cout << "Digite =>  'etirps' para o refrigerante Sprite (R$ 1,50)." << endl;
+    cout << "Digite =>  'm100' para inserir R$ 1.00. " << endl;
+    cout << "Digite =>  'm050' para inserir R$ 0.50. " << endl;
+    cout << "Digite =>  'm025' para inserir R$ 0.25. " << endl;
+    cout << "Digite =>  'dev' para devolucao do seu dinheiro." << endl;
+    cout << "Digite =>  'meet' para o refrigerante Teem (R$ 1.50)." << endl;
+    cout << "Digite =>  'etirps' para o refrigerante Sprite (R$ 1.50)." << endl;
     cout << "Digite =>  'reporta' para o relatorio geral de vendas." << endl;
     cout << "Digite =>  'reportatudo' para lista de todas vendas já feitas." << endl;
     cout << endl;

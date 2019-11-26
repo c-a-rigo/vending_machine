@@ -12,7 +12,7 @@ BancoDados Dados;
 ClockCalendar Calendario(2, 10, 2019, 6, 07, 55, 1);
 //                                    ^
 //                                    |
-//                     mes, dia, ano, hora, min, seg, ispm
+//                    mes, dia, ano, hora, min, seg, ispm
 
 #ifdef PC
 
@@ -201,6 +201,7 @@ void atualiza_tempo()
 
     //string aab = s_mes + "/" + s_dia + "/" + s_ano + " " + s_hora + ":" + s_min + ":" + s_seg;
 
+    cout << endl;
     cout << proc_data << " " << proc_hora << endl;
 
 #endif

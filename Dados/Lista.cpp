@@ -43,6 +43,12 @@ Nodo *Lista::get_mid()
     return mid; //retorna valor do ponteiro mid.
 }
 
+Nodo *Lista::get_topo()
+{
+
+    return top; //retorna valor do ponteiro mid.
+}
+
 Nodo *Lista::get_mid_next()
 {
     return mid->get_next(); //retorna endereco do proximo nodo para o qual o mid aponta

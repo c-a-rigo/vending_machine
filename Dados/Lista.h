@@ -15,6 +15,7 @@ public:
     void push(string &r, int &t, int &o, int &k);
     void pop(string &r, int &t, int &o, int &k);
     Nodo *get_mid();
+    Nodo *get_topo();
     Nodo *get_mid_next();
     void set_mid(Nodo *nxt);
     void ler(string &r, int &t, int &o, int &k, Nodo *nxt);

@@ -1,6 +1,9 @@
 #include "Pilha.h"
 #include "../common.h"
 
+#include <exception>
+using std::bad_alloc;
+
 Pilha::Pilha() //controi a Pilha.
 {
     topo = 0; //inicia com zero nodos.
@@ -31,9 +34,16 @@ void Pilha::push(string refri, int preco)
     precp: O preco do refrigerante.
     
    */
-
-    aux = new Nodo(refri, g_data, g_hora, preco, topo); //aux recebe o endereco do novo nodo criado com o comando new.
-    topo = aux;                                         //topo passa a apontar para o novo nodo.
+    try
+    {
+        aux = new Nodo(refri, g_data, g_hora, preco, topo); //aux recebe o endereco do novo nodo criado com o comando new.
+        topo = aux;                                         //topo passa a apontar para o novo nodo.
+    }
+    catch (bad_alloc E)
+    {
+        cout << "Faltou Memoria...\n"
+             << endl;
+    }
 }
 
 void Pilha::pop(string &r, int &t, int &o, int &k)

@@ -9,7 +9,7 @@
 
 Machine Venda;
 BancoDados Dados;
-ClockCalendar Calendario(2, 10, 2019, 6, 07, 55, 1);
+ClockCalendar Calendario(11, 28, 2019, 4, 20, 55, 1);
 //                                    ^
 //                                    |
 //                    mes, dia, ano, hora, min, seg, ispm
@@ -51,7 +51,7 @@ void vender()
 
 #ifdef ATL
 
-void sell()
+void vender()
 {
     string sell;
     int money;

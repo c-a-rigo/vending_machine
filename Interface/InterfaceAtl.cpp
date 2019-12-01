@@ -132,3 +132,7 @@ void InterfaceAtl::report_final(string x, int y, string f, int z)
 
     printString(aux);
 }
+
+void InterfaceAtl::abertura()
+{
+}

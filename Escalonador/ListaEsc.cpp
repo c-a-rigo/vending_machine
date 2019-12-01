@@ -3,7 +3,7 @@
 ListaEsc::ListaEsc()
 {
     top = 0;
-    n = 0;
+    n = 0; // prioridade teto
 }
 
 ListaEsc::~ListaEsc()

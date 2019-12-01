@@ -1,5 +1,5 @@
 #define PC
-#define HR
+//#define HR
 
 #include "Escalonador/Escalonador.cpp"
 #include "functions.cpp"
